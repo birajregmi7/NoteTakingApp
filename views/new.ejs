@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      #note-form {
+        width: 80%;
+        max-width: 500px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        padding-right: 20px; /* Add padding to the right side */
+      }
+
+      #note-form h2 {
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="note-form">
+      <h2>Create a New Note</h2>
+
+      <form action="http://localhost:8080/posts" method="post">
+        <label for="note-title">Note Title:</label>
+        <input type="text" id="note-title" name="title" required />
+
+        <label for="note-content">Note Content:</label>
+        <textarea
+          id="note-content"
+          name="content"
+          column="10"
+          rows="5"
+          required
+        ></textarea>
+
+        <button type="submit">Save Note</button>
+      </form>
+    </div>
+  </body>
+</html>
