@@ -44,15 +44,14 @@ app.get('/posts/:id/edit', (req, res) => {
 })
 app.patch('/posts/:id', (req, res) => {
   let { id } = req.params;
-  let { title, content } = req.body;
-  let post = posts.find(p => (id === p.id));
-  if (!post) {
-    return res.status(404).send("Post not found");
-  }
-  post.title = title;
-  post.content = content;
-  res.redirect('/posts');
-});
+  let newContent = req.body.content;
+  let newTitle = req.body.title;
+  let post = posts.find((p) => id === p.id);
+  post.content = newContent;
+  post.title = newTitle;
+  console.log(post)
+  res.redirect('/posts')
+})
 app.delete('/posts/:id', (req, res) => {
   let { id } = req.params;
   posts = posts.filter((p) => id !== p.id);

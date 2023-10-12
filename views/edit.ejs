@@ -65,10 +65,10 @@
         method="post"
       >
         <label for="note-title">Note Title:</label>
-        <input type="text" id="note-title" name="title" required />
+        <input type="text" id="note-title" name="title" required value="<%= post.title %>">
 
         <label for="note-content">Note Content:</label>
-        <textarea id="note-content" name="content" rows="5" required></textarea>
+        <textarea id="note-content" name="content" rows="5" required><%= post.content %></textarea>
 
         <button type="submit">Save Note</button>
       </form>
